@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     background: #f0f2f5;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -47,6 +47,7 @@ button:hover {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .result-item {
