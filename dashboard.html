@@ -23,8 +23,7 @@
     <script src="dashboard.js"></script>
     <script src="theme.js"></script>
     <script>
-    
-if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user') {
+    if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'admin') {
         window.location.href = 'index.html';
     }
     function logout() {
