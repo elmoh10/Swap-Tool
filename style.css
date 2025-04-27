@@ -97,7 +97,18 @@ button:hover {
 }
 
 /* Dark mode styling */
-body.dark .mismatch-info {
-    background-color: #4b3e00;
-    color: #ffeb99;
+body.dark {
+    background: #121212;
+    color: #ffffff;
+}
+
+body.dark .container {
+    background: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark input, body.dark button {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
 }
