@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Swap Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+        <h3>Users List:</h3>
+        <ul id="userList"></ul>
+
+        <h3>Add New User:</h3>
+        <input type="text" id="newUsername" placeholder="New Username">
+        <input type="password" id="newPassword" placeholder="New Password">
+        <button onclick="addUser()">Add User</button>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="theme.js"></script>
+    <script>
+    if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'admin') {
+        window.location.href = 'index.html';
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = 'index.html';
+    }
+    </script>
+</body>
+</html>
