@@ -44,26 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Display Employee Info Cards
         const empInfo1 = document.createElement('div');
         empInfo1.className = 'card';
-        empInfo1.innerHTML = <strong>Employee 1:</strong><br>${emp1.Full_Name}<br><strong>Leader:</strong> ${emp1.Leader};
+        empInfo1.innerHTML = `<strong>Employee 1:</strong><br>${emp1.Full_Name}<br><strong>Leader:</strong> ${emp1.Leader}`;
         resultDiv.appendChild(empInfo1);
 
         const empInfo2 = document.createElement('div');
         empInfo2.className = 'card';
-        empInfo2.innerHTML = <strong>Employee 2:</strong><br>${emp2.Full_Name}<br><strong>Leader:</strong> ${emp2.Leader};
+        empInfo2.innerHTML = `<strong>Employee 2:</strong><br>${emp2.Full_Name}<br><strong>Leader:</strong> ${emp2.Leader}`;
         resultDiv.appendChild(empInfo2);
 
+        // Compare results
         const locationResult = emp1.Location.trim().toLowerCase() === emp2.Location.trim().toLowerCase() ? 'Approved' : 'Disapproved';
         const lobResult = emp1.LOB.trim().toLowerCase() === emp2.LOB.trim().toLowerCase() ? 'Approved' : 'Disapproved';
         const skill1 = checkSkill(id1);
         const skill2 = checkSkill(id2);
         const skillResult = skill1 === skill2 ? 'Approved' : 'Disapproved';
 
+        // Display comparison results
         resultDiv.appendChild(createResultElement('Location Check', locationResult));
         resultDiv.appendChild(createResultElement('LOB Check', lobResult));
         resultDiv.appendChild(createResultElement('Skill Check', skillResult));
 
+        // Final decision
         const finalDiv = document.createElement('div');
         if (locationResult === 'Approved' && lobResult === 'Approved' && skillResult === 'Approved') {
             finalDiv.className = 'final-approved';
