@@ -24,6 +24,9 @@ if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user'
         document.getElementById('welcomeMessage').innerText = "Welcome, " + user + "!";
     }
 })
+    function goToTool() {
+        window.location.href = 'tool.html';
+    }
     function logout() {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('role');
