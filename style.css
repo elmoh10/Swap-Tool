@@ -87,18 +87,17 @@ button:hover {
 }
 
 /* Dark Mode */
-body.dark {
-    background: #121212;
-    color: #ffffff;
+.mismatch-info {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #ffeeba;
+    color: #856404;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-body.dark .container {
-    background: #1f1f1f;
-    color: #ffffff;
-}
-
-body.dark input, body.dark button {
-    background: #333;
-    color: white;
-    border: 1px solid #555;
+/* Dark mode styling */
+body.dark .mismatch-info {
+    background-color: #4b3e00;
+    color: #ffeb99;
 }
