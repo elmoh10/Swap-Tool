@@ -112,3 +112,28 @@ body.dark input, body.dark button {
     color: white;
     border: 1px solid #555;
 }
+/* تعديل الألوان في الوضع الليلي */
+body.dark .result-item {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark .card {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+body.dark .final-approved {
+    background-color: #14532d;
+    color: #d1fae5;
+}
+
+body.dark .final-disapproved {
+    background-color: #7f1d1d;
+    color: #fecaca;
+}
+
+body.dark .mismatch-info {
+    background-color: #4b3e00;
+    color: #ffeb99;
+}
