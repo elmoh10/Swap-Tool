@@ -1,4 +1,3 @@
-
 function findEmployee(id) {
     const cleanId = id.trim().toUpperCase();
     return data.find(emp => 
@@ -12,11 +11,19 @@ function checkSkill(id) {
     return gsmIds.includes(cleanId) ? "Special GSM" : "Non Special GSM";
 }
 
-function createResultElement(title, result) {
+function createResultElement(title, result, extraInfo = '') {
     const div = document.createElement('div');
     div.className = "result-item " + (result === 'Approved' ? 'approved' : 'disapproved');
     const icon = result === 'Approved' ? '✅' : '❌';
-    div.innerHTML = `${icon} ${title}: ${result}`;
+    div.innerHTML = ${icon} ${title}: ${result};
+
+    if (result === 'Disapproved' && extraInfo) {
+        const extraDiv = document.createElement('div');
+        extraDiv.className = 'mismatch-info';
+        extraDiv.innerText = extraInfo;
+        div.appendChild(extraDiv);
+    }
+
     return div;
 }
 
@@ -49,12 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const empInfo1 = document.createElement('div');
             empInfo1.className = 'card';
-            empInfo1.innerHTML = `<strong>Employee 1:</strong><br>${emp1.Full_Name}<br><strong>Leader:</strong> ${emp1.Leader}`;
+            empInfo1.innerHTML = <strong>Employee 1:</strong><br>${emp1.Full_Name}<br><strong>Leader:</strong> ${emp1.Leader};
             resultDiv.appendChild(empInfo1);
 
             const empInfo2 = document.createElement('div');
             empInfo2.className = 'card';
-            empInfo2.innerHTML = `<strong>Employee 2:</strong><br>${emp2.Full_Name}<br><strong>Leader:</strong> ${emp2.Leader}`;
+            empInfo2.innerHTML = <strong>Employee 2:</strong><br>${emp2.Full_Name}<br><strong>Leader:</strong> ${emp2.Leader};
             resultDiv.appendChild(empInfo2);
 
             const locationResult = emp1.Location.trim().toLowerCase() === emp2.Location.trim().toLowerCase() ? 'Approved' : 'Disapproved';
@@ -63,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const skill2 = checkSkill(id2);
             const skillResult = skill1 === skill2 ? 'Approved' : 'Disapproved';
 
-            resultDiv.appendChild(createResultElement('Location Check', locationResult));
-            resultDiv.appendChild(createResultElement('LOB Check', lobResult));
-            resultDiv.appendChild(createResultElement('Skill Check', skillResult));
+            resultDiv.appendChild(createResultElement('Location Check', locationResult, locationResult === 'Disapproved' ? ${emp1.Location} vs ${emp2.Location} : ''));
+            resultDiv.appendChild(createResultElement('LOB Check', lobResult, lobResult === 'Disapproved' ? ${emp1.LOB} vs ${emp2.LOB} : ''));
+            resultDiv.appendChild(createResultElement('Skill Check', skillResult, skillResult === 'Disapproved' ? ${skill1} vs ${skill2} : ''));
 
             const finalDiv = document.createElement('div');
             if (locationResult === 'Approved' && lobResult === 'Approved' && skillResult === 'Approved') {
