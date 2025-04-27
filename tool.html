@@ -25,9 +25,9 @@
     <script src="app.js"></script>
     <script src="theme.js"></script>
     <script>
-    if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user') {
-        window.location.href = 'index.html';
-    }
+    if (!localStorage.getItem('currentUser') || localStorage.getItem('role') !== 'user') {
+    window.location.href = 'index.html';
+}
     function logout() {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('role');
