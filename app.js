@@ -15,7 +15,7 @@ function createResultElement(title, result) {
     const div = document.createElement('div');
     div.className = "result-item " + (result === 'Approved' ? 'approved' : 'disapproved');
     const icon = result === 'Approved' ? '✅' : '❌';
-    div.innerHTML = ${icon} ${title}: ${result};
+    div.innerHTML = `${icon} ${title}: ${result}`;
     return div;
 }
 
@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const id2 = document.getElementById('id2').value;
         const emp1 = findEmployee(id1);
         const emp2 = findEmployee(id2);
-
+        
+}
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = '';
 
