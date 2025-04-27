@@ -9,12 +9,14 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         localStorage.setItem('loggedIn', 'true');
         localStorage.setItem('role', 'admin');
         window.location.href = 'dashboard.html';
-    } else if (storedUsers.some(user => user.username === username && user.password === password)) {
-        localStorage.setItem('loggedIn', 'true');
-        localStorage.setItem('role', 'user');
-        localStorage.setItem('currentUser', username);
-        window.location.href = 'home.html';
-    } else {
+    } 
+    else if (storedUsers.some(user => user.username === username && user.password === password)) {
+    localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('role', 'user');
+    localStorage.setItem('currentUser', username); // دي الإضافة الجديدة المهمة
+    window.location.href = 'home.html';
+}
+    else {
         document.getElementById('error').innerText = "Incorrect Username or Password. Please try again.";
     }
 });
