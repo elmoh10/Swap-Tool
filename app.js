@@ -47,29 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const empInfo1 = document.createElement('div');
-empInfo1.className = 'card';
-empInfo1.innerHTML = `
-<strong>Employee 1:</strong><br>
-Name: ${emp1.Full_Name}<br>
-Leader: ${emp1.Leader}<br>
-Location: ${emp1.Location}<br>
-LOB: ${emp1.LOB}<br>
-Skill: ${checkSkill(id1)}
-`;
-resultDiv.appendChild(empInfo1);
+             const empInfo1 = document.createElement('div');
+            empInfo1.className = 'card';
+            empInfo1.innerHTML = `<strong>الموظف الاول:</strong><br>${emp1.Full_Name}<br><strong>Leader:</strong> ${emp1.Leader}`;
+            resultDiv.appendChild(empInfo1);
 
-const empInfo2 = document.createElement('div');
-empInfo2.className = 'card';
-empInfo2.innerHTML = `
-<strong>Employee 2:</strong><br>
-Name: ${emp2.Full_Name}<br>
-Leader: ${emp2.Leader}<br>
-Location: ${emp2.Location}<br>
-LOB: ${emp2.LOB}<br>
-Skill: ${checkSkill(id2)}
-`;
-resultDiv.appendChild(empInfo2);
+            const empInfo2 = document.createElement('div');
+            empInfo2.className = 'card';
+            empInfo2.innerHTML = `<strong>الموظف الثاني:</strong><br>${emp2.Full_Name}<br><strong>Leader:</strong> ${emp2.Leader}`;
+            resultDiv.appendChild(empInfo2);
 
             const locationResult = emp1.Location.trim().toLowerCase() === emp2.Location.trim().toLowerCase() ? 'Approved' : 'Disapproved';
             const lobResult = emp1.LOB.trim().toLowerCase() === emp2.LOB.trim().toLowerCase() ? 'Approved' : 'Disapproved';
