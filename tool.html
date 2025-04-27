@@ -20,11 +20,13 @@
         <div id="result"></div>
     </div>
 
+    <!-- لازم تكون دي مرتبة كده -->
     <script src="data.js"></script>
     <script src="gsm_ids.js"></script>
     <script src="app.js"></script>
     <script src="theme.js"></script>
 
+    <script>
     if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user') {
         window.location.href = 'index.html';
     }
