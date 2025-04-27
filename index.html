@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Swap Checker</title>
+    <title>Swap Checker Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-            <div id="error" style="color:red; margin-top:10px;"></div>
+        <h1>Swap Checker Tool</h1>
+        <form id="swapForm" onsubmit="return false;">
+            <input type="text" id="id1" placeholder="Enter Employee 1 ID" required>
+            <input type="text" id="id2" placeholder="Enter Employee 2 ID" required>
+            <button type="button" id="checkButton">Check Swap</button>
         </form>
+        <div id="result"></div>
     </div>
-    <script src="login.js"></script>
-    <script src="theme.js"></script>
+    <script src="data.js"></script>
+    <script src="gsm_ids.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
