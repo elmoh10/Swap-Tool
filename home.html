@@ -14,9 +14,10 @@
     </div>
 
     <script>
-    if (!localStorage.getItem('currentUser') || localStorage.getItem('role') !== 'user') {
-    window.location.href = 'index.html';
-}
+    
+if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user') {
+        window.location.href = 'index.html';
+    }
     document.getElementById('welcomeMessage').innerText = "Welcome, " + localStorage.getItem('currentUser') + "!";
     function goToTool() {
         window.location.href = 'tool.html';
