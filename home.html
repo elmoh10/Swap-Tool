@@ -18,10 +18,12 @@
 if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user') {
         window.location.href = 'index.html';
     }
-    document.getElementById('welcomeMessage').innerText = "Welcome, " + localStorage.getItem('currentUser') + "!";
-    function goToTool() {
-        window.location.href = 'tool.html';
+    document.addEventListener('DOMContentLoaded', function() {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+        document.getElementById('welcomeMessage').innerText = "Welcome, " + user + "!";
     }
+});
     function logout() {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('role');
