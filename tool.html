@@ -36,6 +36,25 @@ if (!localStorage.getItem('loggedIn') || localStorage.getItem('role') !== 'user'
         localStorage.removeItem('currentUser');
         window.location.href = 'index.html';
     }
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const checkButton = document.getElementById('checkButton');
+    const clearButton = document.getElementById('clearButton');
+
+    if (checkButton) {
+        checkButton.addEventListener('click', function() {
+            // (كود Check Swap موجود هنا)
+        });
+    }
+
+    if (clearButton) {
+        clearButton.addEventListener('click', function() {
+            document.getElementById('id1').value = '';
+            document.getElementById('id2').value = '';
+            document.getElementById('result').innerHTML = '';
+        });
+    }
+});
     </script>
 </body>
 </html>
